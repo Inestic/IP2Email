@@ -13,9 +13,9 @@ IP2Email sends an email with your public IP address got by <https://ifconfig.me>
 <details>
   <summary>Screenshots</summary>
   
-  ![Image](https://github.com/oz-zo/scrn/raw/main/screenshots/ip2email-view.png)
-  ![Image](https://github.com/oz-zo/scrn/raw/main/screenshots/ip2email-config.png)  
-  ![Image](https://github.com/oz-zo/scrn/raw/main/screenshots/ip2email-help.png)
+  ![Image](https://github.com/Inestic/scrn/raw/main/screenshots/ip2email-view.png)
+  ![Image](https://github.com/Inestic/scrn/raw/main/screenshots/ip2email-config.png)  
+  ![Image](https://github.com/Inestic/scrn/raw/main/screenshots/ip2email-help.png)
   
 </details>
 
