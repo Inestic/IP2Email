@@ -9,13 +9,21 @@ namespace IP2Email.Classes
 {
     internal class SendMail : IArgsAction
     {
+<<<<<<< HEAD
         private void SendByEmail(AppConfig config, string ip)
+=======
+        private void SendEmail(AppConfig config, string ip)
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
         {
             MailMessage message = new MailMessage(from: new MailAddress(config.SenderEmail, TextHelper.SenderDisplayName),
                                                     to: new MailAddress(config.RecipientEmail))
             {
                 Subject = TextHelper.EmailSubject,
+<<<<<<< HEAD
                 Body = $"{TextHelper.EmailBody}: {ip}",
+=======
+                Body = $"{TextHelper.EmailBody}: {ip}. {config.EmailBody}",
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
                 IsBodyHtml = false
             };
 
@@ -36,7 +44,11 @@ namespace IP2Email.Classes
             {
                 try
                 {
+<<<<<<< HEAD
                     SendByEmail(appConfig, internetIP);
+=======
+                    SendEmail(appConfig, internetIP);
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
                     ConsoleHelper.EmailSend(senderEmail: appConfig.SenderEmail, recipientEmail: appConfig.RecipientEmail);
                 }
                 catch (Exception ex)

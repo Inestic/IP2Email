@@ -46,7 +46,11 @@ namespace IP2Email.Helpers
             Console.WriteLine();
             Console.WriteLine("IP2Email sends an email with your public IP address got by https://ifconfig.me");
             Console.WriteLine("Copyright (C) 2020 — 2021, Inestic");
+<<<<<<< HEAD
             Console.WriteLine("https://github.com/inestic/ip2email");
+=======
+            Console.WriteLine("https://github.com/Inestic/ip2email");
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
             Console.WriteLine();
         }
 

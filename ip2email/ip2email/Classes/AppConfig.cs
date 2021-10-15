@@ -13,6 +13,10 @@ namespace IP2Email.Classes
             SetIsConfiguredState();
         }
 
+<<<<<<< HEAD
+=======
+        internal string EmailBody { get => DecodeFromRegistry("EBO"); set => EncodeToRegistry("EBO", value); }
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
         internal string EmailServer { get => DecodeFromRegistry("ESE"); set => EncodeToRegistry("ESE", value); }
         internal string EmailServerPort { get => DecodeFromRegistry("ESP"); set => EncodeToRegistry("ESP", value); }
         internal bool IsConfigured { get; set; }
@@ -23,6 +27,7 @@ namespace IP2Email.Classes
         private string DecodeFromRegistry(string regKeyName)
         {
             string plaintext = null;
+<<<<<<< HEAD
 
             try
             {
@@ -48,15 +53,38 @@ namespace IP2Email.Classes
                                 {
                                     plaintext = srDecrypt.ReadToEnd();
                                 }
+=======
+            byte[] regKeyValue = Registry.CurrentUser.OpenSubKey(TextHelper.RegistryAppPath)?.GetValue(regKeyName) as byte[];
+
+            if (regKeyValue != null)
+            {
+                using (Aes aes = Aes.Create())
+                {
+                    aes.Key = Encoding.UTF8.GetBytes(TextHelper.SecurityKey);
+                    aes.IV = Encoding.UTF8.GetBytes(TextHelper.SecurityKey);
+
+                    ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                    using (MemoryStream msDecrypt = new MemoryStream(regKeyValue))
+                    {
+                        using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                        {
+                            using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                            {
+                                plaintext = srDecrypt.ReadToEnd();
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
                             }
                         }
                     }
                 }
             }
+<<<<<<< HEAD
             catch
             {
                 return null;
             }
+=======
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
 
             return plaintext;
         }
@@ -81,9 +109,15 @@ namespace IP2Email.Classes
                     }
 
                     Registry.CurrentUser.OpenSubKey(TextHelper.RegistryKeySoftware, true)
+<<<<<<< HEAD
                                 .CreateSubKey(TextHelper.RegistryKeyAuthor, true)
                                 .CreateSubKey(TextHelper.RegistryAppName, true)
                                 .SetValue(regKeyName, msEncrypt.ToArray());
+=======
+                                        .CreateSubKey(TextHelper.RegistryKeyAuthor, true)
+                                        .CreateSubKey(TextHelper.RegistryAppName, true)
+                                        .SetValue(regKeyName, msEncrypt.ToArray());
+>>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
                 }
             }
         }
