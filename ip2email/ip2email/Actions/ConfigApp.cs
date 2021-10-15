@@ -16,10 +16,7 @@ namespace IP2Email.Actions
                 appConfig.RecipientEmail = ConsoleHelper.SetOption("Recipient email address . . . : ");
                 appConfig.SenderEmail = ConsoleHelper.SetOption("Sender email address. . . . . : ");
                 appConfig.SenderPassword = ConsoleHelper.SetOption("Sender email password . . . . : ");
-<<<<<<< HEAD
-=======
                 appConfig.EmailBody = ConsoleHelper.SetOption("Email body. . . . . . . . . . : ");
->>>>>>> 6c0a5d048f41f68a5de63dee15f0d81e87e6ad0f
                 appConfig.EmailServer = ConsoleHelper.SetOption("Sender SMTP Server (for gmail.com use smtp.gmail.com) . . . : ");
                 appConfig.EmailServerPort = ConsoleHelper.SetOption("Sender SMTP Port (for gmail.com use 587). . . . . . . . . . : ");
                 ConsoleHelper.EmailSettingsSave(true);
