@@ -10,7 +10,7 @@ namespace IP2Email.Classes
     {
         internal AppConfig()
         {
-            SetIsConfiguredState();
+            isConfigured(EmailBody, EmailServer, EmailServerPort, RecipientEmail, SenderEmail, SenderPassword);
         }
 
         internal string EmailBody { get => DecodeFromRegistry("EBO"); set => EncodeToRegistry("EBO", value); }
@@ -78,12 +78,18 @@ namespace IP2Email.Classes
             }
         }
 
-        private void SetIsConfiguredState()
+        private void isConfigured(params string[] properties)
         {
-            IsConfigured = (SenderEmail == null || SenderPassword == null
-                                                || RecipientEmail == null
-                                                || EmailServer == null
-                                                || EmailServerPort == null) ? false : true;
+            foreach (var property in properties)
+            {
+                if (property is null)
+                {
+                    IsConfigured = false;
+                    break;
+                }
+
+                IsConfigured = true;
+            }
         }
     }
 }
