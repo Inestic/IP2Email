@@ -2,7 +2,6 @@
 
 ![GitHub issues](https://img.shields.io/github/issues/Inestic/IP2Email?style=for-the-badge)
 ![GitHub all releases](https://img.shields.io/github/downloads/inestic/ip2email/total?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/inestic/ip2email?style=for-the-badge)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inestic/ip2email/Build%20&%20Release?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/Inestic/IP2Email?style=for-the-badge)
 
