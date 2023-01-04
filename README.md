@@ -1,7 +1,7 @@
 # IP2Email :email:
 
 ![GitHub all releases](https://img.shields.io/github/downloads/inestic/ip2email/total?style=for-the-badge)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inestic/ip2email/Build%20&%20Release?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Inestic/ip2email/dotnet-desktop.yml?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/Inestic/IP2Email?style=for-the-badge)
 
 IP2Email sends an email with your public IP address got by <https://ifconfig.me>
